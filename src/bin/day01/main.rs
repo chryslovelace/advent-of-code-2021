@@ -15,7 +15,7 @@ fn main() {
 }
 
 fn part1() -> impl Display {
-    INPUT.iter().tuple_windows().filter(|&(x, y)| y > x).count()
+    INPUT.iter().tuple_windows().filter(|(x, y)| y > x).count()
 }
 
 fn part2() -> impl Display {
@@ -24,6 +24,6 @@ fn part2() -> impl Display {
         .tuple_windows()
         .map(|(x, y, z)| x + y + z)
         .tuple_windows()
-        .filter(|&(x, y)| y > x)
+        .filter(|(x, y)| y > x)
         .count()
 }
