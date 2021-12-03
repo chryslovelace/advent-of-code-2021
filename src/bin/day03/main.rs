@@ -52,7 +52,7 @@ fn part2() -> impl Display {
     let oxy: usize = {
         let mut candidates = INPUT.clone();
         for i in 0..width {
-            let count: usize = candidates.iter().map(|v| v[i] as usize).sum();
+            let count = candidates.iter().filter(|v| v[i]).count();
             if count >= candidates.len() / 2 {
                 // 1 is most common/tied
                 candidates.drain_filter(|v| !v[i]);
@@ -69,7 +69,7 @@ fn part2() -> impl Display {
     let co2: usize = {
         let mut candidates = INPUT.clone();
         for i in 0..width {
-            let count: usize = candidates.iter().map(|v| v[i] as usize).sum();
+            let count = candidates.iter().filter(|v| v[i]).count();
             if count < candidates.len() / 2 {
                 // 1 is least common
                 candidates.drain_filter(|v| !v[i]);
