@@ -49,7 +49,7 @@ fn part1() -> impl Display {
 }
 
 fn part2() -> impl Display {
-    let mut cohorts = [0usize; 9];
+    let mut cohorts = [0u64; 9];
     for fish in &*INITIAL_STATE {
         cohorts[fish.timer as usize] += 1;
     }
@@ -66,5 +66,5 @@ fn part2() -> impl Display {
             cohorts[0],
         ];
     }
-    cohorts.into_iter().sum::<usize>()
+    cohorts.into_iter().sum::<u64>()
 }
